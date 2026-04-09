@@ -1,0 +1,47 @@
+<footer class="bg-blue text-white pt-10 pb-20 md:pb-6 rounded-t-3xl mx-6 mt-6">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+        <!-- Brand -->
+        <div>
+            <img src="/static/logo/logo.png" alt="logo" class="w-32 mb-4">
+            <p class="text-sm text-gray-200">
+                Fresh fruits delivered with quality and care.
+                Your trusted grocery partner.
+            </p>
+        </div>
+
+        <!-- Links -->
+        <div>
+            <h3 class="font-semibold mb-3">Quick Links</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="{% url 'home' %}" class="hover:text-green">Home</a></li>
+                <li><a href="{% url 'about' %}" class="hover:text-green">About</a></li>
+                <li><a href="{% url 'products' %}" class="hover:text-green">Products</a></li>
+                <li><a href="{% url 'gallery' %}" class="hover:text-green">Gallery</a></li>
+                <li><a href="{% url 'contact' %}" class="hover:text-green">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+            <h3 class="font-semibold mb-3">Follow Us</h3>
+            <div class="flex space-x-4 text-lg">
+                <a href="#" class="hover:text-green"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-green"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-green"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="hover:text-green"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="text-center text-sm text-gray-300 mt-8 border-t border-gray-500 pt-4">
+        © {% now "Y" %} Bakala Fruit. All rights reserved.
+    </div>
+    <div class="text-center text-sm text-gray-300  pt-4 pb-10">
+        Developed by <a href="https://www.inspirezesttechnologies.com/"
+            class="hover:text-green hover:underline">Inspirezest
+            Technologies Pvt Ltd</a>
+    </div>
+</footer>

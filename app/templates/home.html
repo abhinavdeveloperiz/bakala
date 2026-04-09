@@ -1,0 +1,483 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<section class="relative text-white overflow-hidden bg-cover bg-center bg-fixed"
+    style="background-image: url('/static/banner/banner.png');">
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <!-- Content -->
+    <div class="relative max-w-7xl mx-auto px-6 py-20 md:py-28 flex items-center">
+
+        <div class="max-w-xl" data-aos="fade-right">
+            <h1
+                class="text-4xl md:text-5xl font-bold leading-tight mb-4 border-l-4 border-green pl-4 border-b-4 border-green pb-4 uppercase">
+                Fresh & Healthy <br>
+                Fruits
+            </h1>
+
+            <p class="text-lg text-gray-100 mb-6  ">
+                Experience the freshness of premium quality fruits 🍎
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-wrap gap-4">
+                <a href="{% url 'products' %}"
+                    class="bg-white text-green px-6 py-3 rounded-full font-semibold shadow hover:bg-gray-100 transition animate-pulse hover:animate-none">
+                    Shop Now
+                </a>
+
+                <a href="{% url 'contact' %}"
+                    class="border border-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-green transition">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</section>
+
+
+
+<div class="scroll-container">
+    <div class="scroll-track">
+        <span>🍌 Banana</span>
+        <span>🍓 Berry</span>
+        <span>🍎 Apple</span>
+        <span>🍇 Grapes</span>
+        <span>🍍 Pineapple</span>
+        <span>🍊 Orange</span>
+        <span>🍉 Watermelon</span>
+        <span>🥭 Mango</span>
+        <span>🍒 Cherry</span>
+        <span>🥝 Kiwi</span>
+        <span>🍑 Peach</span>
+        <span>🍐 Pear</span>
+
+        <!-- Duplicate for seamless loop -->
+        <span>🍌 Banana</span>
+        <span>🍓 Berry</span>
+        <span>🍎 Apple</span>
+        <span>🍇 Grapes</span>
+        <span>🍍 Pineapple</span>
+        <span>🍊 Orange</span>
+        <span>🍉 Watermelon</span>
+        <span>🥭 Mango</span>
+        <span>🍒 Cherry</span>
+        <span>🥝 Kiwi</span>
+        <span>🍑 Peach</span>
+        <span>🍐 Pear</span>
+    </div>
+</div>
+
+<style>
+    .scroll-container {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        padding: 14px 0;
+        background: linear-gradient(90deg, #0f9d58, #34c759);
+        position: relative;
+    }
+
+    /* Fade edges for premium look */
+    .scroll-container::before,
+    .scroll-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 60px;
+        height: 100%;
+        z-index: 2;
+    }
+
+    .scroll-container::before {
+        left: 0;
+        background: linear-gradient(to right, #0f9d58, transparent);
+    }
+
+    .scroll-container::after {
+        right: 0;
+        background: linear-gradient(to left, #34c759, transparent);
+    }
+
+    .scroll-track {
+        display: inline-block;
+        white-space: nowrap;
+        animation: scroll-left 22s linear infinite;
+    }
+
+    .scroll-track span {
+        display: inline-block;
+        margin: 0 35px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        letter-spacing: 0.5px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Hover effect */
+    .scroll-track span:hover {
+        transform: scale(1.4);
+    }
+
+    /* Pause animation on hover */
+    .scroll-track:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes scroll-left {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+</style>
+
+
+
+
+{% load static %}
+
+<div class="max-w-7xl mx-auto px-4 py-10">
+
+
+
+    <!-- Grid -->
+    <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+
+
+
+        <!-- CARD 6 -->
+        <div class="bg-white shadow-md border rounded-lg overflow-hidden text-center">
+            <div class="overflow-hidden">
+                <img src="{% static 'home/green.png' %}"
+                    class="w-full h-80 object-cover hover:scale-105 duration-300 transition">
+            </div>
+
+            <div class="p-4">
+                <h2 class="font-semibold text-lg">Green Fruit Mix</h2>
+                <p class="text-gray-600 mt-2">A refreshing blend of green fruits like kiwi and grapes. Perfect for detox
+                    smoothies and healthy eating.</p>
+
+                <a href="{% url 'contact' %}" class="mt-3 inline-block bg-red-500 text-white px-4 py-2  transition">
+                    Contact
+                </a>
+            </div>
+        </div>
+
+
+
+
+        <!-- CARD 3 -->
+        <div class="bg-white shadow-md border rounded-lg overflow-hidden text-center">
+            <div class="overflow-hidden">
+                <img src="{% static 'home/kiwi.png' %}"
+                    class="w-full h-80 object-cover hover:scale-105 duration-300 transition">
+            </div>
+
+            <div class="p-4 overflow-hidden">
+                <h2 class="font-semibold text-lg">Kiwi</h2>
+                <p class="text-gray-600 mt-2">Tangy and refreshing kiwi fruits, packed with vitamins. Perfect for
+                    smoothies or as a healthy snack.</p>
+
+                <a href="{% url 'contact' %}" class="mt-3 inline-block bg-red-500 text-white px-4 py-2  transition">
+                    Contact
+                </a>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="bg-white shadow-md border rounded-lg overflow-hidden text-center">
+            <div class="overflow-hidden">
+                <img src="{% static 'home/strawburry.png' %}"
+                    class="w-full h-80 object-cover hover:scale-105 duration-300 transition">
+            </div>
+
+            <div class="p-4">
+                <h2 class="font-semibold text-lg">Strawberries</h2>
+                <p class="text-gray-600 mt-2">Sweet and vibrant strawberries, ideal for desserts or fresh eating.
+                    Hand-picked for their natural sweetness and aroma.</p>
+
+                <a href="{% url 'contact' %}" class="mt-3 inline-block bg-red-500 text-white px-4 py-2  transition">
+                    Contact
+                </a>
+            </div>
+        </div>
+
+
+        <!-- CARD 1 -->
+        <div class="bg-white shadow-md border rounded-lg overflow-hidden text-center">
+            <div class="overflow-hidden">
+                <img src="{% static 'home/apple.png' %}"
+                    class="w-full h-80 object-cover hover:scale-105 duration-300 transition">
+            </div>
+
+            <div class="p-4">
+                <h2 class="font-semibold text-lg">Fresh Apples</h2>
+                <p class="text-gray-600 mt-2">Crisp and juicy red apples, perfect for snacking or baking. Sourced from
+                    the finest orchards for unmatched freshness.</p>
+
+                <a href="{% url 'contact' %}" class="mt-3 inline-block bg-red-500 text-white px-4 py-2  transition">
+                    Contact
+                </a>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="bg-white shadow-md border rounded-lg overflow-hidden text-center">
+            <div class="overflow-hidden">
+                <img src="{% static 'home/blue1.png' %}"
+                    class="w-full h-80 object-cover hover:scale-105 duration-300 transition">
+            </div>
+
+            <div class="p-4">
+                <h2 class="font-semibold text-lg">Blueberries</h2>
+                <p class="text-gray-600 mt-2">Antioxidant-rich blueberries, bursting with flavor. Great for breakfast
+                    bowls or baking into muffins.</p>
+
+                <a href="{% url 'contact' %}" class="mt-3 inline-block bg-red-500 text-white px-4 py-2  transition">
+                    Contact
+                </a>
+            </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="bg-white shadow-md border rounded-lg overflow-hidden text-center">
+            <div class="overflow-hidden">
+                <img src="{% static 'home/blue burry.png' %}"
+                    class="w-full h-80 object-cover hover:scale-105 duration-300 transition">
+            </div>
+
+            <div class="p-4">
+                <h2 class="font-semibold text-lg">Berry Mix</h2>
+                <p class="text-gray-600 mt-2">A delightful assortment of mixed berries, offering a variety of flavors
+                    and colors. Ideal for fruit salads or yogurt toppings.</p>
+
+                <a href="{% url 'contact' %}" class="mt-3 inline-block bg-red-500 text-white px-4 py-2  transition">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="relative bg-green text-white py-20 overflow-hidden">
+
+    <!-- 🔄 Animated Background Elements -->
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute w-20 h-20 bg-white rounded-full top-10 left-10 animate-bounce"></div>
+        <div class="absolute w-16 h-16 bg-white rounded-full bottom-20 right-20 animate-bounce"></div>
+        <div class="absolute w-12 h-12 bg-white rounded-full top-1/2 left-1/3 animate-bounce"></div>
+        <div class="absolute w-12 h-12 bg-white rounded-full top-1/4 left-1/4 animate-bounce"></div>
+        <div class="absolute w-20 h-20 bg-white rounded-full top-1/4 right-1/4 animate-bounce"></div>
+
+
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 text-center">
+
+        <!-- Heading -->
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Why Choose Us
+        </h2>
+        <p class="text-white/80 mb-12">
+            Fresh, healthy and premium quality fruits delivered with care
+        </p>
+
+        <!-- Features -->
+        <div class="grid grid-cols-3 gap-8">
+
+            <!-- Card 1 -->
+            <div class="p-6 rounded-xl hover:scale-105 transition">
+                <i class="fa-solid fa-leaf text-4xl mb-4 text-white"></i>
+                <h3 class="text-xl font-semibold mb-2">Fresh Quality</h3>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="p-6 rounded-xl hover:scale-105 transition">
+                <i class="fa-solid fa-truck-fast text-4xl mb-4 text-white"></i>
+                <h3 class="text-xl font-semibold mb-2">Fast Delivery</h3>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="p-6 rounded-xl hover:scale-105 transition">
+                <i class="fa-solid fa-shield-heart text-4xl mb-4 text-white"></i>
+                <h3 class="text-xl font-semibold mb-2">Trusted Service</h3>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="px-4 md:px-10 py-16 bg-gray-50">
+
+
+    <div class="max-w-7xl mx-auto bg-blue text-white rounded-3xl px-8 py-12 shadow-2xl relative">
+        <!-- 🔄 Animated Background Elements -->
+        <div class="absolute inset-0 opacity-50">
+            <div class="absolute w-20 h-20 bg-white rounded-full top-10 left-10 animate-pulse"></div>
+            <div class="absolute w-12 h-12 bg-white rounded-full top-1/2 left-1/3 animate-pulse"></div>
+            <div class="absolute w-12 h-12 bg-white rounded-full top-1/4 left-1/4 animate-pulse"></div>
+
+
+        </div>
+        <div class="grid md:grid-cols-2 gap-10 items-center relative z-10">
+
+            <!-- LEFT CONTENT -->
+            <div data-aos="zoom-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Fresh Fruits, Direct From Nature 🍎
+                </h2>
+
+                <p class="text-white/80 mb-6">
+                    We bring you the finest selection of fresh and premium fruits sourced directly from trusted farms.
+                    Our mission is to deliver quality, freshness, and nutrition to your doorstep.
+                </p>
+
+                <!-- Points -->
+                <div class="space-y-4">
+
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-circle-check text-green text-xl"></i>
+                        <span>100% Fresh & Organic Products</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-circle-check text-green text-xl"></i>
+                        <span>Carefully Selected Quality Fruits</span>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-circle-check text-green text-xl"></i>
+                        <span>Fast & Reliable Delivery Service</span>
+                    </div>
+
+                </div>
+
+                <!-- CTA -->
+                <a href="{% url 'contact' %}"
+                    class="inline-block mt-6 bg-green text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition">
+                    Contact Us
+                </a>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="relative" data-aos="zoom-out">
+
+                <img src="{% static 'home/apple.png' %}" class="rounded-3xl shadow-lg w-full h-[350px] object-cover">
+
+                <!-- Floating Badge -->
+                <div class="absolute -bottom-5 -left-5 bg-green text-white px-5 py-3 rounded-xl shadow-lg">
+                    Premium Quality 🍓
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<div class="w-full h-[40vh] bg-fixed bg-center bg-cover" style="background-image: url('/static/banner/banner.png');">
+</div>
+
+
+
+
+<section class="py-16 bg-gray-50">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <!-- Heading -->
+        <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-bold">What Our Customers Say</h2>
+            <p class="text-gray-500 mt-2">Real feedback from our happy customers</p>
+        </div>
+
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+
+            <div class="swiper-wrapper">
+
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="bg-blue text-white p-6 rounded-2xl shadow-md text-center">
+
+                        <img src="https://i.pravatar.cc/100?img=1" class="w-20 h-20 rounded-full mx-auto mb-4">
+
+                        <p class=" mb-4">
+                            "The fruits are always fresh and delivered on time. Highly recommended!"
+                        </p>
+
+                        <h3 class="font-semibold">Rahul Kumar</h3>
+                        <span class="text-sm text-gray-300">Customer</span>
+
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="bg-blue text-white p-6 rounded-2xl shadow-md text-center">
+
+                        <img src="https://i.pravatar.cc/100?img=2" class="w-20 h-20 rounded-full mx-auto mb-4">
+
+                        <p class=" mb-4">
+                            "Amazing quality and fast delivery. My family loves it!"
+                        </p>
+
+                        <h3 class="font-semibold">Anjali Sharma</h3>
+                        <span class="text-sm text-gray-300">Customer</span>
+
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="bg-blue text-white p-6 rounded-2xl shadow-md text-center">
+
+                        <img src="https://i.pravatar.cc/100?img=3" class="w-20 h-20 rounded-full mx-auto mb-4">
+
+                        <p class=" mb-4">
+                            "Best fruit store experience. Freshness guaranteed!"
+                        </p>
+
+                        <h3 class="font-semibold">Arun Nair</h3>
+                        <span class="text-sm text-gray-300">Customer</span>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination mt-6"></div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+{% endblock %}

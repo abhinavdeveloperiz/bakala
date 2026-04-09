@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="relative bg-fixed bg-cover bg-center text-white"
+    style="background-image: url('/static/banner/banner.png');">
+
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-10 items-center">
+
+        <!-- LEFT -->
+        <div data-aos="fade-right">
+            <h1 class="text-5xl font-extrabold leading-tight mb-6">
+                Our Journey to <span class="text-green">Freshness</span>
+            </h1>
+            <p class="text-gray-200 text-lg mb-6">
+                From local farms to your table — we deliver freshness, nutrition, and trust in every fruit.
+            </p>
+            <a href="{% url 'products' %}" class="bg-green px-6 py-3 rounded-full">
+                Explore Products
+            </a>
+        </div>
+
+        <!-- RIGHT GLASS CARD -->
+        <div class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-white/20">
+            <h2 class="text-2xl font-bold mb-4">Who We Are</h2>
+            <p class="text-gray-200">
+                We are passionate about bringing farm-fresh fruits directly to your home with zero compromise on
+                quality.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+        <div class="relative">
+            <img src="{% static 'home/apple.png' %}" class="rounded-3xl shadow-xl">
+
+            <div class="absolute -bottom-6 -right-6 bg-green text-white px-6 py-4 rounded-xl shadow-lg">
+                Since 2022 🍓
+            </div>
+        </div>
+
+        <div>
+            <h2 class="text-4xl font-bold mb-4">Our Story</h2>
+            <p class="text-gray-600 mb-4">
+                We started with a simple mission: deliver fresh, healthy fruits without middlemen.
+            </p>
+            <p class="text-gray-600">
+                Today, we connect trusted farms directly to customers ensuring quality, speed, and satisfaction.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section class="bg-green text-white py-16">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 text-center gap-8">
+
+        <div>
+            <h2 class="text-4xl font-bold">10K+</h2>
+            <p>Happy Customers</p>
+        </div>
+
+        <div>
+            <h2 class="text-4xl font-bold">500+</h2>
+            <p>Daily Orders</p>
+        </div>
+
+        <div>
+            <h2 class="text-4xl font-bold">50+</h2>
+            <p>Farm Partners</p>
+        </div>
+
+        <div>
+            <h2 class="text-4xl font-bold">100%</h2>
+            <p>Fresh Guarantee</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+
+        <h2 class="text-4xl font-bold mb-12">Why We Are Different</h2>
+
+        <div class="grid md:grid-cols-3 gap-10">
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition border border-green">
+                <i class="fa-solid fa-seedling text-4xl text-green mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Farm Direct</h3>
+                <p>No middlemen, direct sourcing.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition border border-green">
+                <i class="fa-solid fa-snowflake text-4xl text-green mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Fresh Storage</h3>
+                <p>Cold-chain maintained freshness.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition border border-green">
+                <i class="fa-solid fa-bolt text-4xl text-green mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Fast Delivery</h3>
+                <p>Lightning fast doorstep delivery.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+<section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+
+        <h2 class="text-4xl font-bold text-center mb-12">Our Journey</h2>
+
+        <div class="space-y-10 border-l-4 border-green pl-6">
+
+            <div>
+                <h3 class="font-bold text-xl">2022 - Started</h3>
+                <p class="text-gray-600">Small local fruit delivery service launched.</p>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-xl">2023 - Growth</h3>
+                <p class="text-gray-600">Expanded to multiple cities and farms.</p>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-xl">2024 - Scale</h3>
+                <p class="text-gray-600">Thousands of daily customers.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="bg-blue text-white py-20 text-center relative overflow-hidden">
+
+    <div class="absolute inset-0 opacity-20">
+        <div class="w-32 h-32 bg-white rounded-full absolute top-10 left-10 animate-pulse"></div>
+    </div>
+
+    <h2 class="text-4xl font-bold mb-4">Experience Freshness Today 🍎</h2>
+    <p class="mb-6 text-white/80">Join thousands of happy customers</p>
+
+    <a href="{% url 'products' %}" class="bg-green px-8 py-3 rounded-full">
+        Shop Now
+    </a>
+
+</section>
+
+
+
+
+
+{% endblock %}

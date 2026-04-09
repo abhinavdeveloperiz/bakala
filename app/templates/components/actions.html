@@ -1,0 +1,94 @@
+<!-- FLOATING CONTACT BUTTONS -->
+<div class="fixed bottom-24 md:bottom-6 right-6 flex flex-col items-end space-y-3 z-50">
+
+    <!-- CALL BUTTON -->
+    <a href="tel:+919207773847"
+        class="group flex items-center bg-blue text-white px-5 py-4 rounded-full shadow-lg hover:opacity-90 transition-all duration-300">
+
+        <i class="fas fa-phone text-xl"></i>
+        
+    </a>
+
+    <!-- WHATSAPP BUTTON -->
+    <button onclick="toggleWhatsAppPopup()"
+        class="group flex items-center bg-green text-white px-5 py-4 rounded-full shadow-lg hover:opacity-90 transition-all duration-300">
+
+        <i class="fab fa-whatsapp text-xl"></i>
+       
+    </button>
+
+</div>
+
+<!-- WHATSAPP CHAT POPUP -->
+<div id="whatsappPopup"
+    class="fixed bottom-24 right-6 w-80 bg-white rounded-2xl shadow-2xl hidden z-50 overflow-hidden">
+
+    <!-- HEADER -->
+    <div class="bg-green text-white p-3 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <img src="/static/banner/banner.png" class="w-8 h-8 rounded-full" />
+            <div>
+                <p class="text-sm font-semibold">Support</p>
+                <p class="text-xs opacity-80">online</p>
+            </div>
+        </div>
+        <button onclick="toggleWhatsAppPopup()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- CHAT BODY -->
+    <div class="bg-gray-100 p-3 h-40 overflow-y-auto space-y-2">
+
+        <div class="bg-white p-2 rounded-lg shadow text-sm w-fit max-w-[80%]">
+            👋 Hi! Welcome. How can we help you?
+        </div>
+
+    </div>
+
+    <!-- INPUT AREA -->
+    <div class="p-3 bg-white border-t">
+
+        <input id="wa_name" type="text" placeholder="Your Name"
+            class="w-full mb-2 px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green" />
+
+        <textarea id="wa_message" placeholder="Type a message..."
+            class="w-full mb-2 px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green"></textarea>
+
+        <button onclick="sendWhatsApp()"
+            class="w-full bg-green text-white py-2 rounded-lg hover:opacity-90 flex items-center justify-center">
+            <i class="fab fa-whatsapp mr-2"></i> Send Message
+        </button>
+
+    </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+    function toggleWhatsAppPopup() {
+        const popup = document.getElementById("whatsappPopup");
+        popup.classList.toggle("hidden");
+    }
+
+    function sendWhatsApp() {
+        const name = document.getElementById("wa_name").value.trim();
+        const message = document.getElementById("wa_message").value.trim();
+
+        if (!name || !message) {
+            alert("Please enter name and message");
+            return;
+        }
+
+        const whatsappNumber = "919207773847";
+
+        const text = encodeURIComponent(
+            `Hello, my name is ${name}\n${message}`
+        );
+
+        const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+
+        window.open(url, "_blank");
+
+        toggleWhatsAppPopup();
+    }
+</script>

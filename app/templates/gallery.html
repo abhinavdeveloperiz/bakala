@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- HERO -->
+<section class="relative bg-fixed bg-cover bg-center text-white"
+    style="background-image: url('/static/banner/banner.png');">
+
+    <div class="absolute inset-0 bg-black/70"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 py-24 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Gallery</h1>
+        <p class="text-gray-200">Fresh moments captured from our fruits collection 🍎</p>
+    </div>
+</section>
+
+
+<!-- GALLERY -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6">
+
+            <!-- IMAGE ITEM -->
+            {% for i in "123456789"|make_list %}
+            <div class="overflow-hidden rounded-xl shadow-lg cursor-pointer group" onclick="openModal(this)">
+
+                <img src="https://img.freepik.com/free-photo/fresh-vegetables-fruit-market-stall_1101-2560.jpg"
+     class="w-full h-72 object-cover group-hover:scale-110 transition duration-500">
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- MODAL (LIGHTBOX) -->
+<div id="galleryModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50">
+
+    <!-- CLOSE BUTTON -->
+    <button onclick="closeModal()" class="absolute top-6 right-6 text-white text-3xl font-bold hover:text-red-400">
+        ✕
+    </button>
+
+    <!-- IMAGE -->
+    <img id="modalImg" class="max-w-[90%] max-h-[85%] rounded-lg shadow-2xl animate-fadeIn">
+
+</div>
+
+
+<!-- STYLES -->
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .animate-fadeIn {
+        animation: fadeIn 0.3s ease;
+    }
+</style>
+
+
+<!-- SCRIPT -->
+<script>
+    function openModal(element) {
+        const img = element.querySelector("img");
+        const modal = document.getElementById("galleryModal");
+        const modalImg = document.getElementById("modalImg");
+
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+
+        modalImg.src = img.src;
+    }
+
+    function closeModal() {
+        const modal = document.getElementById("galleryModal");
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+    }
+
+    // Close on outside click
+    document.getElementById("galleryModal").addEventListener("click", function (e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,118 @@
+<!-- 🌟 TOP NAVBAR -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/80 py-2 backdrop-blur-md shadow-md border-b">
+
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+
+        <!-- Logo -->
+        <img src="/static/logo/logo.png" alt="logo" class="w-36">
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center space-x-8 font-medium text-gray-700">
+
+            <a href="{% url 'home' %}" class="relative group">
+                Home
+                <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-green transition-all group-hover:w-full"></span>
+            </a>
+
+            <a href="{% url 'about' %}" class="relative group">
+                About
+                <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-green transition-all group-hover:w-full"></span>
+            </a>
+
+            <a href="{% url 'products' %}" class="relative group">
+                Products
+                <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-green transition-all group-hover:w-full"></span>
+            </a>
+
+            <a href="{% url 'gallery' %}" class="relative group">
+                Gallery
+                <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-green transition-all group-hover:w-full"></span>
+            </a>
+
+            <a href="{% url 'contact' %}" class="relative group">
+                Contact
+                <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-green transition-all group-hover:w-full"></span>
+            </a>
+
+        </nav>
+
+        <!-- CTA Button -->
+        <a href="{% url 'contact' %}"
+            class="hidden md:inline-block bg-green text-white px-5 py-2 rounded-full shadow hover:scale-105 transition">
+            Get Quote
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" class="md:hidden text-2xl text-blue">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- 📱 Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden px-6 pb-4 bg-white">
+
+        <a href="{% url 'home' %}" class="block py-3 border-b hover:text-green">Home</a>
+        <a href="{% url 'about' %}" class="block py-3 border-b hover:text-green">About</a>
+        <a href="{% url 'products' %}" class="block py-3 border-b hover:text-green">Products</a>
+        <a href="{% url 'gallery' %}" class="block py-3 border-b hover:text-green">Gallery</a>
+        <a href="{% url 'contact' %}" class="block py-3 hover:text-green">Contact</a>
+
+    </div>
+</header>
+
+<!-- SPACE FOR FIXED NAV -->
+<div class="h-20"></div>
+
+
+<!-- 🔻 MOBILE FLOATING FOOTER NAVBAR -->
+<div class="md:hidden fixed bottom-4 left-0 w-full z-50 flex justify-center px-4">
+
+    <div class="bg-white shadow-2xl rounded-2xl px-6 py-3 w-full max-w-md border border-gray-200">
+
+        <div class="flex justify-between items-center text-xs">
+
+            <!-- Home -->
+            <a href="{% url 'home' %}" class="flex flex-col items-center text-gray-600 hover:text-green transition">
+                <i class="fa-solid fa-house text-lg"></i>
+                <span>Home</span>
+            </a>
+
+            <!-- Products -->
+            <a href="{% url 'products' %}" class="flex flex-col items-center text-gray-600 hover:text-green transition">
+                <i class="fa-solid fa-cart-shopping text-lg"></i>
+                <span>Products</span>
+            </a>
+
+            <!-- Center Button -->
+            <a href="{% url 'home' %}"
+                class="-mt-8 bg-green text-white p-4 rounded-full shadow-lg flex items-center justify-center">
+                <i class="fa-solid fa-store text-lg"></i>
+            </a>
+
+            <!-- Gallery -->
+            <a href="{% url 'gallery' %}" class="flex flex-col items-center text-gray-600 hover:text-green transition">
+                <i class="fa-solid fa-image text-lg"></i>
+                <span>Gallery</span>
+            </a>
+
+            <!-- Contact -->
+            <a href="{% url 'contact' %}" class="flex flex-col items-center text-gray-600 hover:text-green transition">
+                <i class="fa-solid fa-phone text-lg"></i>
+                <span>Contact</span>
+            </a>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+</script>
