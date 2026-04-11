@@ -1,9 +1,14 @@
 from django.shortcuts import render
+from app.models import Product,Banner,gallery
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    banner=Banner.objects.last()
+    context={
+        'banner':banner,
+    }
+    return render(request, 'home.html',context)
 
 def about(request):
     return render(request, 'about.html')
