@@ -150,126 +150,46 @@
 
 {% load static %}
 
-<div class="max-w-7xl mx-auto px-4 py-10">
+<div class="max-w-7xl mx-auto px-4 py-12">
 
+    <!-- Section Header -->
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 uppercase">
+            Products
+        </h2>
+        <a href="{% url 'products' %}" class="text-green-600 font-medium hover:underline">
+            View All →
+        </a>
+    </div>
 
+    <!-- Scroll Container -->
+    <div class="flex gap-6 overflow-x-auto scrollbar-hide pb-4">
 
-    <!-- Grid -->
-    <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+        {% for product in products %}
+        <a href="{% url 'products' %}"
+            class="min-w-[260px] sm:min-w-[280px] md:min-w-[300px] bg-white rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 group overflow-hidden">
 
+            <!-- Image Section -->
+            <div class="relative h-64 overflow-hidden">
 
+                <img src="{{ product.image.url }}"
+                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
 
-        <!-- CARD 6 -->
-        <div class="bg-white shadow-md border rounded-lg overflow-hidden text-center">
-            <div class="overflow-hidden">
-                <img src="{% static 'home/green.png' %}"
-                    class="w-full h-80 object-cover hover:scale-105 duration-300 transition">
+                <!-- Dark Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+                <!-- ✅ PRODUCT NAME ON TOP -->
+                <h3 class="absolute bottom-4 left-4 right-4 text-white text-lg font-semibold leading-tight">
+                    {{ product.name }}
+                </h3>
+
             </div>
 
-            <div class="p-4">
-                <h2 class="font-semibold text-lg">Green Fruit Mix</h2>
-                <p class="text-gray-600 mt-2">A refreshing blend of green fruits like kiwi and grapes. Perfect for detox
-                    smoothies and healthy eating.</p>
-
-                <a href="{% url 'contact' %}" class="mt-3 inline-block bg-red-500 text-white px-4 py-2  transition">
-                    Contact
-                </a>
-            </div>
-        </div>
 
 
+        </a>
+        {% endfor %}
 
-
-        <!-- CARD 3 -->
-        <div class="bg-white shadow-md border rounded-lg overflow-hidden text-center">
-            <div class="overflow-hidden">
-                <img src="{% static 'home/kiwi.png' %}"
-                    class="w-full h-80 object-cover hover:scale-105 duration-300 transition">
-            </div>
-
-            <div class="p-4 overflow-hidden">
-                <h2 class="font-semibold text-lg">Kiwi</h2>
-                <p class="text-gray-600 mt-2">Tangy and refreshing kiwi fruits, packed with vitamins. Perfect for
-                    smoothies or as a healthy snack.</p>
-
-                <a href="{% url 'contact' %}" class="mt-3 inline-block bg-red-500 text-white px-4 py-2  transition">
-                    Contact
-                </a>
-            </div>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="bg-white shadow-md border rounded-lg overflow-hidden text-center">
-            <div class="overflow-hidden">
-                <img src="{% static 'home/strawburry.png' %}"
-                    class="w-full h-80 object-cover hover:scale-105 duration-300 transition">
-            </div>
-
-            <div class="p-4">
-                <h2 class="font-semibold text-lg">Strawberries</h2>
-                <p class="text-gray-600 mt-2">Sweet and vibrant strawberries, ideal for desserts or fresh eating.
-                    Hand-picked for their natural sweetness and aroma.</p>
-
-                <a href="{% url 'contact' %}" class="mt-3 inline-block bg-red-500 text-white px-4 py-2  transition">
-                    Contact
-                </a>
-            </div>
-        </div>
-
-
-        <!-- CARD 1 -->
-        <div class="bg-white shadow-md border rounded-lg overflow-hidden text-center">
-            <div class="overflow-hidden">
-                <img src="{% static 'home/apple.png' %}"
-                    class="w-full h-80 object-cover hover:scale-105 duration-300 transition">
-            </div>
-
-            <div class="p-4">
-                <h2 class="font-semibold text-lg">Fresh Apples</h2>
-                <p class="text-gray-600 mt-2">Crisp and juicy red apples, perfect for snacking or baking. Sourced from
-                    the finest orchards for unmatched freshness.</p>
-
-                <a href="{% url 'contact' %}" class="mt-3 inline-block bg-red-500 text-white px-4 py-2  transition">
-                    Contact
-                </a>
-            </div>
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="bg-white shadow-md border rounded-lg overflow-hidden text-center">
-            <div class="overflow-hidden">
-                <img src="{% static 'home/blue1.png' %}"
-                    class="w-full h-80 object-cover hover:scale-105 duration-300 transition">
-            </div>
-
-            <div class="p-4">
-                <h2 class="font-semibold text-lg">Blueberries</h2>
-                <p class="text-gray-600 mt-2">Antioxidant-rich blueberries, bursting with flavor. Great for breakfast
-                    bowls or baking into muffins.</p>
-
-                <a href="{% url 'contact' %}" class="mt-3 inline-block bg-red-500 text-white px-4 py-2  transition">
-                    Contact
-                </a>
-            </div>
-        </div>
-
-        <!-- CARD 5 -->
-        <div class="bg-white shadow-md border rounded-lg overflow-hidden text-center">
-            <div class="overflow-hidden">
-                <img src="{% static 'home/blue burry.png' %}"
-                    class="w-full h-80 object-cover hover:scale-105 duration-300 transition">
-            </div>
-
-            <div class="p-4">
-                <h2 class="font-semibold text-lg">Berry Mix</h2>
-                <p class="text-gray-600 mt-2">A delightful assortment of mixed berries, offering a variety of flavors
-                    and colors. Ideal for fruit salads or yogurt toppings.</p>
-
-                <a href="{% url 'contact' %}" class="mt-3 inline-block bg-red-500 text-white px-4 py-2  transition">
-                    Contact
-                </a>
-            </div>
-        </div>
     </div>
 </div>
 
@@ -419,53 +339,27 @@
 
             <div class="swiper-wrapper">
 
+
+                {% for t in test%}
                 <!-- Slide 1 -->
                 <div class="swiper-slide">
                     <div class="bg-blue text-white p-6 rounded-2xl shadow-md text-center">
-
-                        <img src="https://i.pravatar.cc/100?img=1" class="w-20 h-20 rounded-full mx-auto mb-4">
+                        {% if t.image %}
+                        <img src="{{ t.image.url }}" class="w-20 h-20 rounded-full mx-auto mb-4">
+                        {% else %}
+                        <img src="https://img.freepik.com/premium-vector/user-icon-icon_1076610-59410.jpg " class="w-20 h-20 rounded-full mx-auto mb-4">
+                        {% endif %}
 
                         <p class=" mb-4">
-                            "The fruits are always fresh and delivered on time. Highly recommended!"
+                            "{{ t.feedback }}"
                         </p>
 
-                        <h3 class="font-semibold">Rahul Kumar</h3>
-                        <span class="text-sm text-gray-300">Customer</span>
+                        <h3 class="font-semibold">{{ t.name }}</h3>
 
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                    <div class="bg-blue text-white p-6 rounded-2xl shadow-md text-center">
-
-                        <img src="https://i.pravatar.cc/100?img=2" class="w-20 h-20 rounded-full mx-auto mb-4">
-
-                        <p class=" mb-4">
-                            "Amazing quality and fast delivery. My family loves it!"
-                        </p>
-
-                        <h3 class="font-semibold">Anjali Sharma</h3>
-                        <span class="text-sm text-gray-300">Customer</span>
-
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                    <div class="bg-blue text-white p-6 rounded-2xl shadow-md text-center">
-
-                        <img src="https://i.pravatar.cc/100?img=3" class="w-20 h-20 rounded-full mx-auto mb-4">
-
-                        <p class=" mb-4">
-                            "Best fruit store experience. Freshness guaranteed!"
-                        </p>
-
-                        <h3 class="font-semibold">Arun Nair</h3>
-                        <span class="text-sm text-gray-300">Customer</span>
-
-                    </div>
-                </div>
+                {% endfor %}
 
             </div>
 

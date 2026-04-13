@@ -20,129 +20,26 @@
         <!-- GRID -->
         <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
 
-            <!-- CARD -->
-            <div class="group relative rounded-2xl overflow-hidden shadow-lg">
 
-                <img src="https://img.freepik.com/free-photo/mixed-fruits-with-apple-banana-orange-other_74190-938.jpg?semt=ais_hybrid&w=740&q=80"
-                    class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
-
-                <!-- OVERLAY -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90">
-                </div>
-
-                <!-- CONTENT -->
-                <div class="absolute bottom-0 p-6 text-white">
-                    <h3 class="text-xl font-bold mb-2">Fruits</h3>
-
-                </div>
-
-            </div>
+            {% for p in products %}
 
             <!-- CARD -->
-            <div class="group relative rounded-2xl overflow-hidden shadow-lg">
+            <a href="{% url 'contact' %}" class="group relative rounded-2xl overflow-hidden shadow-lg">
 
-                <img src="https://www.onlinedelivery.in/images/detailed/24/4292.jpg"
+                <img src="{{ p.image.url }}" alt="{{ p.name }}"
                     class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
 
                 <div class="absolute bottom-0 p-6 text-white">
-                    <h3 class="text-xl font-bold mb-2">Baby Care</h3>
+                    <h3 class="text-xl font-bold mb-2">{{ p.name }}</h3>
 
                 </div>
 
-            </div>
+            </a>
 
-            <!-- CARD -->
-            <div class="group relative rounded-2xl overflow-hidden shadow-lg">
+            {% endfor %}
 
-                <img src="https://m.media-amazon.com/images/I/71EKy3OOq2L._AC_UF894,1000_QL80_.jpg"
-                    class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-                <div class="absolute bottom-0 p-6 text-white">
-                    <h3 class="text-xl font-bold mb-2">Breakfast Foods</h3>
-
-                </div>
-
-            </div>
-
-            <!-- CARD -->
-            <div class="group relative rounded-2xl overflow-hidden shadow-lg">
-
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoN0jkunk9WQqBSLwqxQjnJW9Vj8F2zu-bVg&s"
-                    class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-                <div class="absolute bottom-0 p-6 text-white">
-                    <h3 class="text-xl font-bold mb-2">Butchery</h3>
-
-                </div>
-
-            </div>
-
-            <!-- CARD -->
-            <div class="group relative rounded-2xl overflow-hidden shadow-lg">
-
-                <img src="https://www.shutterstock.com/image-photo/assortment-canned-jarred-food-products-600nw-2711169837.jpg"
-                    class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-                <div class="absolute bottom-0 p-6 text-white">
-                    <h3 class="text-xl font-bold mb-2">Canned and Jarred Foods</h3>
-
-                </div>
-
-            </div>
-
-            <!-- CARD -->
-            <div class="group relative rounded-2xl overflow-hidden shadow-lg">
-
-                <img src="https://www.freshfarms.com/wp-content/uploads/2023/02/A-Beginners-Guide-to-Using-Condiments-in-Cooking.jpg"
-                    class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-                <div class="absolute bottom-0 p-6 text-white">
-                    <h3 class="text-xl font-bold mb-2">Condiments</h3>
-
-                </div>
-
-            </div>
-
-            <!-- CARD -->
-            <div class="group relative rounded-2xl overflow-hidden shadow-lg">
-
-                <img src="https://cdn.shopify.com/s/files/1/0278/8642/0047/files/still-life-with-appetizing-bakery-food-min_600x600.jpg?v=1686915652"
-                    class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-                <div class="absolute bottom-0 p-6 text-white">
-                    <h3 class="text-xl font-bold mb-2">Cooking and Baking</h3>
-
-                </div>
-
-            </div>
-
-
-            <!-- CARD -->
-            <div class="group relative rounded-2xl overflow-hidden shadow-lg">
-
-                <img src="https://whisk.com/wp-content/uploads/2023/02/shutterstock_1679020255.jpg"
-                    class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
-
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-                <div class="absolute bottom-0 p-6 text-white">
-                    <h3 class="text-xl font-bold mb-2">Egg and Dairy</h3>
-
-                </div>
-
-            </div>
 
         </div>
 

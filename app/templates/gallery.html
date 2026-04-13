@@ -22,11 +22,10 @@
         <div class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6">
 
             <!-- IMAGE ITEM -->
-            {% for i in "123456789"|make_list %}
+            {% for g in gallery %}
             <div class="overflow-hidden rounded-xl shadow-lg cursor-pointer group" onclick="openModal(this)">
 
-                <img src="https://img.freepik.com/free-photo/fresh-vegetables-fruit-market-stall_1101-2560.jpg"
-     class="w-full h-72 object-cover group-hover:scale-110 transition duration-500">
+                <img src="{{ g.image.url }}" class="w-full h-72 object-cover group-hover:scale-110 transition duration-500">
             </div>
             {% endfor %}
 

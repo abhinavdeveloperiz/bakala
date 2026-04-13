@@ -1,0 +1,72 @@
+<!-- Cursor Glow -->
+<div id="cursor-glow"></div>
+
+
+
+<style>
+    #cursor-glow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        pointer-events: none;
+        background: radial-gradient(circle, rgba(34, 197, 94, 0.35) 0%, rgba(34, 197, 94, 0.15) 40%, transparent 70%);
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        transition: width 0.2s ease, height 0.2s ease;
+    }
+
+    
+    /* Hide on mobile */
+    @media (max-width: 768px) {
+        #cursor-glow {
+            display: none;
+        }
+    }
+</style>
+
+
+
+<script>
+const cursor = document.getElementById("cursor-glow");
+
+let mouseX = 0;
+let mouseY = 0;
+let posX = 0;
+let posY = 0;
+
+// Track mouse
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+// Smooth follow animation
+function animate() {
+    posX += (mouseX - posX) * 0.1;
+    posY += (mouseY - posY) * 0.1;
+
+    cursor.style.left = posX + "px";
+    cursor.style.top = posY + "px";
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+// Hover effect on clickable elements
+document.querySelectorAll("a, button").forEach(el => {
+    el.addEventListener("mouseenter", () => {
+        cursor.style.width = "180px";
+        cursor.style.height = "180px";
+    });
+
+    el.addEventListener("mouseleave", () => {
+        cursor.style.width = "120px";
+        cursor.style.height = "120px";
+    });
+});
+</script>
+

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Banner, Product, gallery, Testimonial
+from .models import Banner, Product, Gallery, Testimonial
 
 
 def image_preview(obj):
@@ -35,7 +35,7 @@ class ProductAdmin(admin.ModelAdmin):
         return image_preview(obj)
 
 
-@admin.register(gallery)
+@admin.register(Gallery)
 class GalleryAdmin(admin.ModelAdmin):
     list_display = ('id', 'image_tag')
     readonly_fields = ('image_tag',)

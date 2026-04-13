@@ -18,7 +18,7 @@ class Product(models.Model):
         return self.name
     
 
-class gallery(models.Model):
+class Gallery(models.Model):
     image = models.ImageField(upload_to='gallery/')
 
     def __str__(self):
